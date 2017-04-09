@@ -70,13 +70,34 @@
                     <view key="view" contentMode="scaleToFill" id="5pz-XJ-SLf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xd2-jx-VMi">
+                                <rect key="frame" x="0.0" y="64" width="375" height="539"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayF-4A-cwS">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ayF-4A-cwS" firstAttribute="centerX" secondItem="5pz-XJ-SLf" secondAttribute="centerX" id="2o4-hw-S7Z"/>
+                            <constraint firstItem="ayF-4A-cwS" firstAttribute="height" secondItem="5pz-XJ-SLf" secondAttribute="height" id="BEp-KJ-RTn"/>
+                            <constraint firstItem="ayF-4A-cwS" firstAttribute="centerY" secondItem="5pz-XJ-SLf" secondAttribute="centerY" id="eZB-oS-8oQ"/>
+                            <constraint firstItem="ayF-4A-cwS" firstAttribute="width" secondItem="5pz-XJ-SLf" secondAttribute="width" id="quD-d5-80O"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g7f-6P-01p"/>
+                    <connections>
+                        <outlet property="localVideo" destination="ayF-4A-cwS" id="HmO-KC-PVO"/>
+                        <outlet property="remoteView" destination="Xd2-jx-VMi" id="XJH-1E-bHk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q61-sL-kCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927" y="-340"/>
+            <point key="canvasLocation" x="1501.5999999999999" y="-326.98650674662673"/>
         </scene>
     </scenes>
 </document>
