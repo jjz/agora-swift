@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  InitViewController.swift
 //  agora
 //
 //  Created by jjz on 09/04/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class InitViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
