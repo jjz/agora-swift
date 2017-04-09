@@ -25,6 +25,7 @@
 		4CCA09A91E9A551900E3E2F1 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA09A81E9A551900E3E2F1 /* libresolv.9.tbd */; };
 		4CCA09AB1E9A552C00E3E2F1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA09AA1E9A552C00E3E2F1 /* AudioToolbox.framework */; };
 		4CCA09AD1E9A553A00E3E2F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA09AC1E9A553A00E3E2F1 /* AVFoundation.framework */; };
+		4CCA09AF1E9A5A6F00E3E2F1 /* AgoraSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA09AE1E9A5A6F00E3E2F1 /* AgoraSetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		4CCA09A81E9A551900E3E2F1 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		4CCA09AA1E9A552C00E3E2F1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4CCA09AC1E9A553A00E3E2F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4CCA09AE1E9A5A6F00E3E2F1 /* AgoraSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgoraSetting.swift; sourceTree = "<group>"; };
+		4CCA09B51E9A5F4900E3E2F1 /* agora-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "agora-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,7 @@
 		4CCA096D1E9A26F200E3E2F1 /* agora */ = {
 			isa = PBXGroup;
 			children = (
+				4CCA09B51E9A5F4900E3E2F1 /* agora-Bridging-Header.h */,
 				4CCA096E1E9A26F200E3E2F1 /* AppDelegate.swift */,
 				4CCA09701E9A26F200E3E2F1 /* InitViewController.swift */,
 				4CCA09721E9A26F200E3E2F1 /* Main.storyboard */,
@@ -154,6 +158,7 @@
 				4CCA09771E9A26F200E3E2F1 /* LaunchScreen.storyboard */,
 				4CCA097A1E9A26F200E3E2F1 /* Info.plist */,
 				4CCA09A61E9A541800E3E2F1 /* MainViewController.swift */,
+				4CCA09AE1E9A5A6F00E3E2F1 /* AgoraSetting.swift */,
 			);
 			path = agora;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 					4CCA096A1E9A26F200E3E2F1 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 7FE47MNMC6;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					4CCA097E1E9A26F200E3E2F1 = {
@@ -312,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CCA09A71E9A541800E3E2F1 /* MainViewController.swift in Sources */,
+				4CCA09AF1E9A5A6F00E3E2F1 /* AgoraSetting.swift in Sources */,
 				4CCA09711E9A26F200E3E2F1 /* InitViewController.swift in Sources */,
 				4CCA096F1E9A26F200E3E2F1 /* AppDelegate.swift in Sources */,
 			);
@@ -465,8 +472,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7FE47MNMC6;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"${PROJECT_DIR}/agora/libs\"/**",
 					"\"${PROJECT_DIR}/agora/libs\"/**",
@@ -477,6 +485,8 @@
 				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/agora/libs\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "-12.agora";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "agora/agora-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -485,8 +495,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7FE47MNMC6;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"${PROJECT_DIR}/agora/libs\"/**",
 					"\"${PROJECT_DIR}/agora/libs\"/**",
@@ -497,6 +508,7 @@
 				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/agora/libs\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "-12.agora";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "agora/agora-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

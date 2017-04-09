@@ -9,6 +9,7 @@
 import UIKit
 
 class InitViewController: UIViewController {
+    var agoraKit : AgoraRtcEngineKit!
 
     override func viewDidLoad() {
         super.viewDidLoad()
