@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19B3A020ADDC8EEF261DC1E0 /* AgoraRtcEngineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B3A34EA9FC7162F86925EA /* AgoraRtcEngineKit.framework */; };
+		19B3A203E26B16928037240B /* AgoraRtcCryptoLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B3A23607BFA5D661FFFB08 /* AgoraRtcCryptoLoader.framework */; };
+		19B3AB09B98425FA668F68CD /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B3AC0C100A980F8F243C41 /* libcrypto.a */; };
 		4CCA096F1E9A26F200E3E2F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA096E1E9A26F200E3E2F1 /* AppDelegate.swift */; };
 		4CCA09711E9A26F200E3E2F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA09701E9A26F200E3E2F1 /* ViewController.swift */; };
 		4CCA09741E9A26F200E3E2F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA09721E9A26F200E3E2F1 /* Main.storyboard */; };
@@ -14,6 +17,14 @@
 		4CCA09791E9A26F200E3E2F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA09771E9A26F200E3E2F1 /* LaunchScreen.storyboard */; };
 		4CCA09841E9A26F200E3E2F1 /* agoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA09831E9A26F200E3E2F1 /* agoraTests.swift */; };
 		4CCA098F1E9A26F200E3E2F1 /* agoraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA098E1E9A26F200E3E2F1 /* agoraUITests.swift */; };
+		4CCA099D1E9A508F00E3E2F1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA099C1E9A508F00E3E2F1 /* CoreTelephony.framework */; };
+		4CCA099F1E9A50BD00E3E2F1 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA099E1E9A50BD00E3E2F1 /* CoreMedia.framework */; };
+		4CCA09A11E9A510900E3E2F1 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA09A01E9A510900E3E2F1 /* VideoToolbox.framework */; };
+		4CCA09A31E9A511400E3E2F1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA09A21E9A511400E3E2F1 /* libc++.tbd */; };
+		4CCA09A71E9A541800E3E2F1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA09A61E9A541800E3E2F1 /* MainViewController.swift */; };
+		4CCA09A91E9A551900E3E2F1 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA09A81E9A551900E3E2F1 /* libresolv.9.tbd */; };
+		4CCA09AB1E9A552C00E3E2F1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA09AA1E9A552C00E3E2F1 /* AudioToolbox.framework */; };
+		4CCA09AD1E9A553A00E3E2F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA09AC1E9A553A00E3E2F1 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19B3A23607BFA5D661FFFB08 /* AgoraRtcCryptoLoader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraRtcCryptoLoader.framework; path = /Users/jjz/Documents/workspace/github/agora/agora/libs/AgoraRtcCryptoLoader.framework; sourceTree = "<absolute>"; };
+		19B3A34EA9FC7162F86925EA /* AgoraRtcEngineKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraRtcEngineKit.framework; path = /Users/jjz/Documents/workspace/github/agora/agora/libs/AgoraRtcEngineKit.framework; sourceTree = "<absolute>"; };
+		19B3AC0C100A980F8F243C41 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = /Users/jjz/Documents/workspace/github/agora/agora/libs/libcrypto.a; sourceTree = "<absolute>"; };
 		4CCA096B1E9A26F200E3E2F1 /* agora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCA096E1E9A26F200E3E2F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CCA09701E9A26F200E3E2F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +61,14 @@
 		4CCA098A1E9A26F200E3E2F1 /* agoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = agoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCA098E1E9A26F200E3E2F1 /* agoraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = agoraUITests.swift; sourceTree = "<group>"; };
 		4CCA09901E9A26F200E3E2F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CCA099C1E9A508F00E3E2F1 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		4CCA099E1E9A50BD00E3E2F1 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		4CCA09A01E9A510900E3E2F1 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		4CCA09A21E9A511400E3E2F1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		4CCA09A61E9A541800E3E2F1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4CCA09A81E9A551900E3E2F1 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		4CCA09AA1E9A552C00E3E2F1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4CCA09AC1E9A553A00E3E2F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +76,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CCA09AD1E9A553A00E3E2F1 /* AVFoundation.framework in Frameworks */,
+				4CCA09AB1E9A552C00E3E2F1 /* AudioToolbox.framework in Frameworks */,
+				4CCA09A91E9A551900E3E2F1 /* libresolv.9.tbd in Frameworks */,
+				4CCA09A31E9A511400E3E2F1 /* libc++.tbd in Frameworks */,
+				4CCA09A11E9A510900E3E2F1 /* VideoToolbox.framework in Frameworks */,
+				4CCA099F1E9A50BD00E3E2F1 /* CoreMedia.framework in Frameworks */,
+				4CCA099D1E9A508F00E3E2F1 /* CoreTelephony.framework in Frameworks */,
+				19B3AB09B98425FA668F68CD /* libcrypto.a in Frameworks */,
+				19B3A020ADDC8EEF261DC1E0 /* AgoraRtcEngineKit.framework in Frameworks */,
+				19B3A203E26B16928037240B /* AgoraRtcCryptoLoader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +106,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19B3AB6A72488185405AC935 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CCA09AC1E9A553A00E3E2F1 /* AVFoundation.framework */,
+				4CCA09AA1E9A552C00E3E2F1 /* AudioToolbox.framework */,
+				4CCA09A81E9A551900E3E2F1 /* libresolv.9.tbd */,
+				4CCA09A21E9A511400E3E2F1 /* libc++.tbd */,
+				4CCA09A01E9A510900E3E2F1 /* VideoToolbox.framework */,
+				4CCA099E1E9A50BD00E3E2F1 /* CoreMedia.framework */,
+				4CCA099C1E9A508F00E3E2F1 /* CoreTelephony.framework */,
+				19B3AC0C100A980F8F243C41 /* libcrypto.a */,
+				19B3A34EA9FC7162F86925EA /* AgoraRtcEngineKit.framework */,
+				19B3A23607BFA5D661FFFB08 /* AgoraRtcCryptoLoader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4CCA09621E9A26F200E3E2F1 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +130,7 @@
 				4CCA09821E9A26F200E3E2F1 /* agoraTests */,
 				4CCA098D1E9A26F200E3E2F1 /* agoraUITests */,
 				4CCA096C1E9A26F200E3E2F1 /* Products */,
+				19B3AB6A72488185405AC935 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +153,7 @@
 				4CCA09751E9A26F200E3E2F1 /* Assets.xcassets */,
 				4CCA09771E9A26F200E3E2F1 /* LaunchScreen.storyboard */,
 				4CCA097A1E9A26F200E3E2F1 /* Info.plist */,
+				4CCA09A61E9A541800E3E2F1 /* MainViewController.swift */,
 			);
 			path = agora;
 			sourceTree = "<group>";
@@ -193,6 +244,7 @@
 				TargetAttributes = {
 					4CCA096A1E9A26F200E3E2F1 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 7FE47MNMC6;
 						ProvisioningStyle = Automatic;
 					};
 					4CCA097E1E9A26F200E3E2F1 = {
@@ -259,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CCA09A71E9A541800E3E2F1 /* MainViewController.swift in Sources */,
 				4CCA09711E9A26F200E3E2F1 /* ViewController.swift in Sources */,
 				4CCA096F1E9A26F200E3E2F1 /* AppDelegate.swift in Sources */,
 			);
@@ -412,8 +465,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7FE47MNMC6;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/agora/libs\"/**",
+					"\"${PROJECT_DIR}/agora/libs\"/**",
+					"\"${PROJECT_DIR}/agora/libs\"/**",
+				);
 				INFOPLIST_FILE = agora/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/agora/libs\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "-12.agora";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -424,8 +485,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7FE47MNMC6;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/agora/libs\"/**",
+					"\"${PROJECT_DIR}/agora/libs\"/**",
+					"\"${PROJECT_DIR}/agora/libs\"/**",
+				);
 				INFOPLIST_FILE = agora/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/agora/libs\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "-12.agora";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -505,6 +574,7 @@
 				4CCA09951E9A26F200E3E2F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CCA09961E9A26F200E3E2F1 /* Build configuration list for PBXNativeTarget "agoraTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +583,7 @@
 				4CCA09981E9A26F200E3E2F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CCA09991E9A26F200E3E2F1 /* Build configuration list for PBXNativeTarget "agoraUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +592,7 @@
 				4CCA099B1E9A26F200E3E2F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
