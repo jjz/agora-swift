@@ -481,6 +481,7 @@
 					"\"${PROJECT_DIR}/agora/libs\"/**",
 				);
 				INFOPLIST_FILE = agora/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/agora/libs\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "-12.agora";
@@ -504,6 +505,7 @@
 					"\"${PROJECT_DIR}/agora/libs\"/**",
 				);
 				INFOPLIST_FILE = agora/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"${PROJECT_DIR}/agora/libs\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "-12.agora";
