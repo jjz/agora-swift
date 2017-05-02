@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InitViewController: UIViewController {
+class ChatViewController: UIViewController {
     var agoraKit : AgoraRtcEngineKit!
     
     @IBOutlet weak var localVideo: UIView!
@@ -55,7 +55,7 @@ class InitViewController: UIViewController {
 
 }
 
-extension InitViewController:AgoraRtcEngineDelegate{
+extension ChatViewController:AgoraRtcEngineDelegate{
     func rtcEngine(_ engine: AgoraRtcEngineKit!, firstRemoteVideoDecodedOfUid uid: UInt, size: CGSize, elapsed: Int) {
         if(remoteView.isHidden){
         remoteView.isHidden=false

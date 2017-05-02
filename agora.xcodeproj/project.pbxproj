@@ -11,7 +11,7 @@
 		19B3A203E26B16928037240B /* AgoraRtcCryptoLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B3A23607BFA5D661FFFB08 /* AgoraRtcCryptoLoader.framework */; };
 		19B3AB09B98425FA668F68CD /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B3AC0C100A980F8F243C41 /* libcrypto.a */; };
 		4CCA096F1E9A26F200E3E2F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA096E1E9A26F200E3E2F1 /* AppDelegate.swift */; };
-		4CCA09711E9A26F200E3E2F1 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA09701E9A26F200E3E2F1 /* InitViewController.swift */; };
+		4CCA09711E9A26F200E3E2F1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA09701E9A26F200E3E2F1 /* ChatViewController.swift */; };
 		4CCA09741E9A26F200E3E2F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA09721E9A26F200E3E2F1 /* Main.storyboard */; };
 		4CCA09761E9A26F200E3E2F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA09751E9A26F200E3E2F1 /* Assets.xcassets */; };
 		4CCA09791E9A26F200E3E2F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA09771E9A26F200E3E2F1 /* LaunchScreen.storyboard */; };
@@ -51,7 +51,7 @@
 		19B3AC0C100A980F8F243C41 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = /Users/jjz/Documents/workspace/github/agora/agora/libs/libcrypto.a; sourceTree = "<absolute>"; };
 		4CCA096B1E9A26F200E3E2F1 /* agora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCA096E1E9A26F200E3E2F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4CCA09701E9A26F200E3E2F1 /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
+		4CCA09701E9A26F200E3E2F1 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		4CCA09731E9A26F200E3E2F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CCA09751E9A26F200E3E2F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CCA09781E9A26F200E3E2F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 			children = (
 				4CCA09B51E9A5F4900E3E2F1 /* agora-Bridging-Header.h */,
 				4CCA096E1E9A26F200E3E2F1 /* AppDelegate.swift */,
-				4CCA09701E9A26F200E3E2F1 /* InitViewController.swift */,
+				4CCA09701E9A26F200E3E2F1 /* ChatViewController.swift */,
 				4CCA09721E9A26F200E3E2F1 /* Main.storyboard */,
 				4CCA09751E9A26F200E3E2F1 /* Assets.xcassets */,
 				4CCA09771E9A26F200E3E2F1 /* LaunchScreen.storyboard */,
@@ -319,7 +319,7 @@
 			files = (
 				4CCA09A71E9A541800E3E2F1 /* MainViewController.swift in Sources */,
 				4CCA09AF1E9A5A6F00E3E2F1 /* AgoraSetting.swift in Sources */,
-				4CCA09711E9A26F200E3E2F1 /* InitViewController.swift in Sources */,
+				4CCA09711E9A26F200E3E2F1 /* ChatViewController.swift in Sources */,
 				4CCA096F1E9A26F200E3E2F1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
