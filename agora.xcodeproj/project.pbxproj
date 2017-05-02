@@ -26,6 +26,8 @@
 		4CCA09AB1E9A552C00E3E2F1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA09AA1E9A552C00E3E2F1 /* AudioToolbox.framework */; };
 		4CCA09AD1E9A553A00E3E2F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA09AC1E9A553A00E3E2F1 /* AVFoundation.framework */; };
 		4CCA09AF1E9A5A6F00E3E2F1 /* AgoraSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA09AE1E9A5A6F00E3E2F1 /* AgoraSetting.swift */; };
+		4CD156E61EB8C3B1000C82A6 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD156E51EB8C3B1000C82A6 /* ChannelViewController.swift */; };
+		4CD156E81EB8C4B7000C82A6 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD156E71EB8C4B7000C82A6 /* ChannelCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		4CCA09AC1E9A553A00E3E2F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		4CCA09AE1E9A5A6F00E3E2F1 /* AgoraSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgoraSetting.swift; sourceTree = "<group>"; };
 		4CCA09B51E9A5F4900E3E2F1 /* agora-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "agora-Bridging-Header.h"; sourceTree = "<group>"; };
+		4CD156E51EB8C3B1000C82A6 /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		4CD156E71EB8C4B7000C82A6 /* ChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 				4CCA097A1E9A26F200E3E2F1 /* Info.plist */,
 				4CCA09A61E9A541800E3E2F1 /* MainViewController.swift */,
 				4CCA09AE1E9A5A6F00E3E2F1 /* AgoraSetting.swift */,
+				4CD156E51EB8C3B1000C82A6 /* ChannelViewController.swift */,
+				4CD156E71EB8C4B7000C82A6 /* ChannelCell.swift */,
 			);
 			path = agora;
 			sourceTree = "<group>";
@@ -318,9 +324,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CCA09A71E9A541800E3E2F1 /* MainViewController.swift in Sources */,
+				4CD156E81EB8C4B7000C82A6 /* ChannelCell.swift in Sources */,
 				4CCA09AF1E9A5A6F00E3E2F1 /* AgoraSetting.swift in Sources */,
 				4CCA09711E9A26F200E3E2F1 /* ChatViewController.swift in Sources */,
 				4CCA096F1E9A26F200E3E2F1 /* AppDelegate.swift in Sources */,
+				4CD156E61EB8C3B1000C82A6 /* ChannelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
