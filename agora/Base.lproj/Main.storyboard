@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -72,18 +73,27 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhE-rA-ozH">
-                                            <rect key="frame" x="42" y="14" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhE-rA-ozH">
+                                            <rect key="frame" x="42" y="14" width="102" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXf-63-VPh">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aXf-63-VPh">
                                             <rect key="frame" x="185" y="0.0" width="40" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="rnr-Ar-HiY"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aXf-63-VPh" firstAttribute="leading" secondItem="QhE-rA-ozH" secondAttribute="trailing" constant="41" id="1X8-Ol-nj7"/>
+                                        <constraint firstItem="QhE-rA-ozH" firstAttribute="top" secondItem="DTh-Gr-sr2" secondAttribute="topMargin" constant="6" id="8hh-78-ftu"/>
+                                        <constraint firstItem="aXf-63-VPh" firstAttribute="leading" secondItem="DTh-Gr-sr2" secondAttribute="leadingMargin" constant="177" id="N1v-bI-eBK"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="aXf-63-VPh" secondAttribute="bottom" constant="-4.5" id="bM2-UC-cnA"/>
+                                        <constraint firstItem="aXf-63-VPh" firstAttribute="top" secondItem="DTh-Gr-sr2" secondAttribute="top" id="qG0-wc-kVD"/>
+                                        <constraint firstItem="QhE-rA-ozH" firstAttribute="leading" secondItem="DTh-Gr-sr2" secondAttribute="leadingMargin" constant="34" id="ulM-LI-4Dh"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="imgChannelIcon" destination="aXf-63-VPh" id="OOf-xL-bOT"/>
@@ -100,7 +110,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUs-ga-a1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1502" y="343"/>
+            <point key="canvasLocation" x="1501.5999999999999" y="342.27886056971516"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="jMf-hB-X43">

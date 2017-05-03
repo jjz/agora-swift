@@ -31,7 +31,9 @@ class ChannelViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(ChannelCell.self, forCellReuseIdentifier: "ChannelCell")
+        //self.tableView.register(ChannelCell.self, forCellReuseIdentifier: "ChannelCell")
+        
+        
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -42,10 +44,12 @@ class ChannelViewController: UITableViewController {
     }
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                let cell :ChannelCell = tableView.dequeueReusableCell(withIdentifier: "ChannelCell") as!  ChannelCell
+        guard  let cell :ChannelCell = tableView.dequeueReusableCell(withIdentifier: "ChannelCell",for:indexPath) as?  ChannelCell else{
+                fatalError("the dequeued cell is not an instance of ChannelCell")
+        }
                 let channel:Channel = dataArray![indexPath.row]
-        //       // cell.labChannelName.text=channel.name
-        //        //cell.imgChannelIcon.image=UIImage();
+               cell.labChannelName.text=channel.name
+                cell.imgChannelIcon.image=UIImage();
                 return cell
     }
     
