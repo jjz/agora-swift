@@ -19,10 +19,10 @@ class ChannelViewController: UITableViewController {
         super.init(coder: aDecoder)
         let channelSignle :Channel = Channel()
         channelSignle.name="一对一"
-        channelSignle.imagePath=""
+        channelSignle.imagePath="signle"
         let channelMulti:Channel=Channel()
         channelMulti.name="多对多"
-        channelMulti.imagePath=""
+        channelMulti.imagePath="multi"
         dataArray?.append(channelSignle)
         dataArray?.append(channelMulti)
       
@@ -49,7 +49,7 @@ class ChannelViewController: UITableViewController {
         }
                 let channel:Channel = dataArray![indexPath.row]
                cell.labChannelName.text=channel.name
-                cell.imgChannelIcon.image=UIImage();
+        cell.imgChannelIcon.image=UIImage(named:channel.imagePath!);
                 return cell
     }
     
