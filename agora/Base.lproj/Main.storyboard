@@ -107,10 +107,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="6pq-Zz-gZi"/>
+                    <connections>
+                        <segue destination="63v-ml-bFe" kind="push" identifier="ToSignle" id="PCc-78-sNW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUs-ga-a1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1501.5999999999999" y="342.27886056971516"/>
+            <point key="canvasLocation" x="1473" y="389"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="jMf-hB-X43">

@@ -56,5 +56,10 @@ class ChannelViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row==0){
+            self.performSegue(withIdentifier: "ToSignle", sender:nil )
+        }
+    }
     
 }
