@@ -13,15 +13,19 @@ class Channel: NSObject {
     public var imagePath:String?
 }
 class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    public var dataArray:Array<Channel>? = Array<Channel>()
-    //private var agoraKit : AgoraRtcEngineKit
-
+    
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bgView: UIView!
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    
+    public var dataArray:Array<Channel>? = Array<Channel>()
+    private var agoraKit : AgoraRtcEngineKit!
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
         let channelSignle :Channel = Channel()
         channelSignle.name="一对一"
         channelSignle.imagePath="signle"
@@ -30,17 +34,28 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
         channelMulti.imagePath="multi"
         dataArray?.append(channelSignle)
         dataArray?.append(channelMulti)
-      
-        
-
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
         self.tableView.dataSource=self
         self.tableView.delegate=self
-        //self.tableView.register(ChannelCell.self, forCellReuseIdentifier: "ChannelCell")
+    
+          agoraKit=AgoraRtcEngineKit.sharedEngine(withAppId: AgoraSetting.AgoraAppId, delegate: self)
+        agoraKit.enableVideo()
+        agoraKit.setVideoProfile(._VideoProfile_480P, swapWidthAndHeight: false)
+        let videoCanvas=AgoraRtcVideoCanvas()
+        videoCanvas.uid=0
+        videoCanvas.view=bgView
+        videoCanvas.renderMode = .render_Adaptive
+        agoraKit.setupLocalVideo(videoCanvas)
         
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        agoraKit.startPreview()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        agoraKit.startPreview()
     }
      func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -70,3 +85,21 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
 }
+extension ChannelViewController:AgoraRtcEngineDelegate{
+    func rtcEngine(_ engine: AgoraRtcEngineKit!, firstRemoteVideoDecodedOfUid uid: UInt, size: CGSize, elapsed: Int) {
+        
+
+        
+    }
+    func rtcEngine(_ engine: AgoraRtcEngineKit!, didLeaveChannelWith stats: AgoraRtcStats!) {
+        
+    }
+    func rtcEngine(_ engine: AgoraRtcEngineKit!, didVideoEnabled enabled: Bool, byUid uid: UInt) {
+        
+    }
+}
+
+
+
+
+
