@@ -52,12 +52,23 @@ class ChatViewController: UIViewController {
             
     }
     }
-    @IBAction func mute(_ sender: Any) {
+    @IBAction func mute(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        agoraKit.muteLocalAudioStream(sender.isSelected)
     }
 
-    @IBAction func switchCamera(_ sender: Any) {
+    @IBAction func switchCamera(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        agoraKit.switchCamera()
     }
+    
     @IBAction func hangUp(_ sender: Any) {
+        agoraKit.leaveChannel(nil)
+        remoteView.removeFromSuperview()
+        localVideo.removeFromSuperview()
+        agoraKit=nil
+        self.navigationController?.popViewController(animated: true)
+        
     }
 }
 

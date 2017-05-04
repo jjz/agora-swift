@@ -145,6 +145,7 @@
                                             <constraint firstAttribute="width" constant="40" id="Zcy-6h-xiu"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="switchCameraButton"/>
+                                        <state key="selected" image="switchCameraButtonSelected"/>
                                         <connections>
                                             <action selector="switchCamera:" destination="63v-ml-bFe" eventType="touchUpInside" id="V9h-sJ-zDc"/>
                                         </connections>
@@ -156,6 +157,7 @@
                                             <constraint firstAttribute="width" constant="40" id="eUk-w0-iL0"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="muteButton"/>
+                                        <state key="selected" image="muteButtonSelected"/>
                                         <connections>
                                             <action selector="mute:" destination="63v-ml-bFe" eventType="touchUpInside" id="UAD-sm-rNg"/>
                                         </connections>
@@ -216,6 +218,8 @@
     <resources>
         <image name="hangUpButton" width="372" height="372"/>
         <image name="muteButton" width="372" height="372"/>
+        <image name="muteButtonSelected" width="372" height="372"/>
         <image name="switchCameraButton" width="372" height="372"/>
+        <image name="switchCameraButtonSelected" width="372" height="372"/>
     </resources>
 </document>
