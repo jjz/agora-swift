@@ -12,9 +12,14 @@ class Channel: NSObject {
     public var name:String?
     public var imagePath:String?
 }
-class ChannelViewController: UITableViewController {
+class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     public var dataArray:Array<Channel>? = Array<Channel>()
+    //private var agoraKit : AgoraRtcEngineKit
 
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bgView: UIView!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         let channelSignle :Channel = Channel()
@@ -31,19 +36,21 @@ class ChannelViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.dataSource=self
+        self.tableView.delegate=self
         //self.tableView.register(ChannelCell.self, forCellReuseIdentifier: "ChannelCell")
         
         
     }
-    override func numberOfSections(in tableView: UITableView) -> Int {
+     func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
     }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (dataArray?.count)!
     }
    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard  let cell :ChannelCell = tableView.dequeueReusableCell(withIdentifier: "ChannelCell",for:indexPath) as?  ChannelCell else{
                 fatalError("the dequeued cell is not an instance of ChannelCell")
         }
@@ -53,10 +60,10 @@ class ChannelViewController: UITableViewController {
                 return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44.0
     }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(indexPath.row==0){
             self.performSegue(withIdentifier: "ToSignle", sender:nil )
         }
