@@ -52,7 +52,13 @@ class ChatViewController: UIViewController {
             
     }
     }
+    @IBAction func mute(_ sender: Any) {
+    }
 
+    @IBAction func switchCamera(_ sender: Any) {
+    }
+    @IBAction func hangUp(_ sender: Any) {
+    }
 }
 
 extension ChatViewController:AgoraRtcEngineDelegate{
