@@ -17,6 +17,7 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
     public var dataArray:Array<UInt>?=Array<UInt>();
     
     var agoraKit :AgoraRtcEngineKit!
+    private var isSelect :Bool!=false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,10 +79,38 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
         
     }
     func waterflowLayout(_ waterflowLayout: LDWaterflowLayout!, heightForItemAt index: UInt, itemWidth: CGFloat) -> CGFloat {
-        return 200;
+        let count:Int=(dataArray?.count)!
+        if(isSelect){
+            return 50
+        }
+        switch count {
+        case 1:
+            return 300
+        case 2:
+            return 300
+        case 3:
+            return 150
+        case 4:
+            return 150
+        default:
+            return 100
+        }
     }
     func columnCount(in waterflowLayout: LDWaterflowLayout!) -> CGFloat {
-        return 2
+        let count:Int=(dataArray?.count)!
+        switch count {
+        case 1:
+            return 1
+        case 2:
+            return 1
+        case 3:
+            return 2
+        case 4:
+            return 2
+        default:
+            return 3
+        }
+        
     }
     
 

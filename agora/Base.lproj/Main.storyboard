@@ -149,11 +149,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="60H-7c-abw">
-                                <rect key="frame" x="16" y="64" width="343" height="228"/>
+                                <rect key="frame" x="16" y="64" width="343" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="228" id="Dsz-QH-wEP"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lVM-Pb-C84">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -258,7 +255,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGN-lH-4CG">
-                                <rect key="frame" x="16" y="300" width="343" height="259"/>
+                                <rect key="frame" x="16" y="539" width="343" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -266,6 +263,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="YI2-uh-8fv" secondAttribute="trailing" id="5RR-Yf-yEG"/>
                             <constraint firstItem="YI2-uh-8fv" firstAttribute="leading" secondItem="1U6-lw-2n4" secondAttribute="leading" id="930-Cr-uOJ"/>
+                            <constraint firstItem="YI2-uh-8fv" firstAttribute="top" secondItem="60H-7c-abw" secondAttribute="bottom" constant="36" id="Bf0-xu-KHT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="60H-7c-abw" secondAttribute="trailing" id="G4W-9Z-RWH"/>
                             <constraint firstItem="60H-7c-abw" firstAttribute="leading" secondItem="1U6-lw-2n4" secondAttribute="leadingMargin" id="GVB-JX-hDH"/>
                             <constraint firstItem="jGN-lH-4CG" firstAttribute="leading" secondItem="60H-7c-abw" secondAttribute="leading" id="Kvi-NZ-ILY"/>
@@ -275,6 +273,7 @@
                             <constraint firstItem="tG1-Bw-IAw" firstAttribute="top" secondItem="YI2-uh-8fv" secondAttribute="bottom" id="b8U-0Q-CPy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jGN-lH-4CG" secondAttribute="trailing" id="cMN-Rs-7fP"/>
                             <constraint firstItem="jGN-lH-4CG" firstAttribute="top" secondItem="60H-7c-abw" secondAttribute="bottom" constant="8" symbolic="YES" id="gR3-xu-N7b"/>
+                            <constraint firstItem="jGN-lH-4CG" firstAttribute="top" secondItem="60H-7c-abw" secondAttribute="bottom" constant="8" id="jdZ-lv-X58"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Aux-U5-x02"/>
