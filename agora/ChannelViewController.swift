@@ -81,6 +81,8 @@ class ChannelViewController: UIViewController, UITableViewDelegate, UITableViewD
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(indexPath.row==0){
             self.performSegue(withIdentifier: "ToSignle", sender:nil )
+        }else if(indexPath.row==1){
+            self.performSegue(withIdentifier: "ToMutil", sender: nil)
         }
     }
     

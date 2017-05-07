@@ -16,26 +16,20 @@ class ChatViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initAgoraEngine()
-        setupVideo()
+        agoraKit=AgoraRtcEngineKit.sharedEngine(withAppId: AgoraSetting.AgoraAppId, delegate: self)
+        agoraKit.enableVideo()
         setupLocalVideo()
         joinChannel()
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
     }
-    func initAgoraEngine(){
-        agoraKit=AgoraRtcEngineKit.sharedEngine(withAppId: AgoraSetting.AgoraAppId, delegate: self)
-    }
-    func setupVideo(){
-        agoraKit.enableVideo()
-        agoraKit.setVideoProfile(._VideoProfile_360P, swapWidthAndHeight: false)
-    }
+    
     func setupLocalVideo(){
+        agoraKit.setVideoProfile(._VideoProfile_360P, swapWidthAndHeight: false)
         let videoCanvas=AgoraRtcVideoCanvas()
         videoCanvas.uid=0
         videoCanvas.view=localVideo
@@ -58,7 +52,6 @@ class ChatViewController: UIViewController {
     }
 
     @IBAction func switchCamera(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
         agoraKit.switchCamera()
     }
     
@@ -75,7 +68,7 @@ class ChatViewController: UIViewController {
 extension ChatViewController:AgoraRtcEngineDelegate{
     func rtcEngine(_ engine: AgoraRtcEngineKit!, firstRemoteVideoDecodedOfUid uid: UInt, size: CGSize, elapsed: Int) {
         if(remoteView.isHidden){
-        remoteView.isHidden=false
+            remoteView.isHidden=false
         }
         let videoCanvas = AgoraRtcVideoCanvas()
         videoCanvas.uid = uid
