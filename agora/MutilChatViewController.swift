@@ -14,6 +14,7 @@ class  MutilChatViewController: UIViewController,UICollectionViewDelegate,UIColl
     
     @IBOutlet weak var collectionView: UICollectionView!
 
+    public var dataArray:Array<UInt>?=Array<UInt>();
     
     var agoraKit :AgoraRtcEngineKit!
     
@@ -21,12 +22,14 @@ class  MutilChatViewController: UIViewController,UICollectionViewDelegate,UIColl
         super.viewDidLoad()
         agoraKit=AgoraRtcEngineKit.sharedEngine(withAppId: AgoraSetting.AgoraAppId, delegate: self)
         agoraKit.enableVideo()
+        setupLocalVideo()
         agoraKit.joinChannel(byKey: nil, channelName: "demo", info: nil, uid: 0) { [weak self](sid,uid,elapsed)->Void in
             if let weakSelf=self{
                 weakSelf.agoraKit.setEnableSpeakerphone(true)
                 UIApplication.shared.isIdleTimerDisabled=true
             }
         }
+    
         self.collectionView.dataSource=self
         self.collectionView.delegate=self
         
@@ -34,8 +37,10 @@ class  MutilChatViewController: UIViewController,UICollectionViewDelegate,UIColl
     func setupLocalVideo(){
         agoraKit.setVideoProfile(._VideoProfile_360P, swapWidthAndHeight: false)
         let videoCanvas=AgoraRtcVideoCanvas()
-        videoCanvas.uid=0
-        //videoCanvas.view=lo
+        videoCanvas.uid=1
+        videoCanvas.view = remoteView
+        videoCanvas.renderMode = .render_Fit
+        
     }
     
     
@@ -50,14 +55,16 @@ class  MutilChatViewController: UIViewController,UICollectionViewDelegate,UIColl
         
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return (dataArray?.count)!
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell :ChatCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChatCell", for: indexPath) as? ChatCell else {
             fatalError("the dequeued cell is not an instance of ChannelCell")
         }
         cell.agora=agoraKit
-        cell.setUid(uid: 0)
+        let uid:UInt = dataArray![indexPath.row]
+
+        cell.setUid(uid: uid)
         return cell
         
         
@@ -74,11 +81,15 @@ extension MutilChatViewController :AgoraRtcEngineDelegate{
         let videoCanvas=AgoraRtcVideoCanvas()
         videoCanvas.uid = uid
         videoCanvas.view = remoteView
-        videoCanvas.renderMode = .render_Adaptive
+        videoCanvas.renderMode = .render_Fit
         agoraKit.setupRemoteVideo(videoCanvas)
         
     }
     func rtcEngine(_ engine: AgoraRtcEngineKit!, didJoinedOfUid uid: UInt, elapsed: Int) {
+        if(!(dataArray?.contains(uid))!){
+            dataArray?.append(uid)
+            collectionView.reloadData()
+        }
         
     }
 }

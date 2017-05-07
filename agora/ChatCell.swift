@@ -12,7 +12,7 @@ class ChatCell: UICollectionViewCell {
         let videoCanvas = AgoraRtcVideoCanvas()
         videoCanvas.uid=uid
         videoCanvas.view=videoView
-        videoCanvas.renderMode = .render_Adaptive
+        videoCanvas.renderMode = .render_Fit
         agora.setupLocalVideo(videoCanvas)
     
     }
