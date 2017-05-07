@@ -8,7 +8,7 @@
 
 import Foundation
 
-class  MutilChatViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICollectionViewDataSource {
     
     @IBOutlet weak var remoteView: UIView!
     
@@ -30,8 +30,16 @@ class  MutilChatViewController: UIViewController,UICollectionViewDelegate,UIColl
             }
         }
     
+        dataArray?.append(1)
+        dataArray?.append(2)
+        dataArray?.append(3)
+        dataArray?.append(4)
         self.collectionView.dataSource=self
-        self.collectionView.delegate=self
+        
+        let layout :LDWaterflowLayout=LDWaterflowLayout()
+        layout.delegate=self
+        self.collectionView.collectionViewLayout=layout
+    
         
     }
     func setupLocalVideo(){
@@ -69,7 +77,14 @@ class  MutilChatViewController: UIViewController,UICollectionViewDelegate,UIColl
         
         
     }
+    func waterflowLayout(_ waterflowLayout: LDWaterflowLayout!, heightForItemAt index: UInt, itemWidth: CGFloat) -> CGFloat {
+        return 200;
+    }
+    func columnCount(in waterflowLayout: LDWaterflowLayout!) -> CGFloat {
+        return 2
+    }
     
+
 
 
 }

@@ -12,6 +12,7 @@
 		19B3AB09B98425FA668F68CD /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B3AC0C100A980F8F243C41 /* libcrypto.a */; };
 		4C5F2D4D1EBEB4D3008ACD47 /* MutilChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F2D4C1EBEB4D3008ACD47 /* MutilChatViewController.swift */; };
 		4C5F2D4F1EBEBFBA008ACD47 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F2D4E1EBEBFBA008ACD47 /* ChatCell.swift */; };
+		4C5F2D531EBF2761008ACD47 /* LDWaterflowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5F2D521EBF2761008ACD47 /* LDWaterflowLayout.m */; };
 		4CCA096F1E9A26F200E3E2F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA096E1E9A26F200E3E2F1 /* AppDelegate.swift */; };
 		4CCA09711E9A26F200E3E2F1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA09701E9A26F200E3E2F1 /* ChatViewController.swift */; };
 		4CCA09741E9A26F200E3E2F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA09721E9A26F200E3E2F1 /* Main.storyboard */; };
@@ -55,6 +56,8 @@
 		19B3AC0C100A980F8F243C41 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = /Users/jjz/Documents/workspace/github/agora/agora/libs/libcrypto.a; sourceTree = "<absolute>"; };
 		4C5F2D4C1EBEB4D3008ACD47 /* MutilChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutilChatViewController.swift; sourceTree = "<group>"; };
 		4C5F2D4E1EBEBFBA008ACD47 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		4C5F2D511EBF2761008ACD47 /* LDWaterflowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDWaterflowLayout.h; sourceTree = "<group>"; };
+		4C5F2D521EBF2761008ACD47 /* LDWaterflowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDWaterflowLayout.m; sourceTree = "<group>"; };
 		4CCA096B1E9A26F200E3E2F1 /* agora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCA096E1E9A26F200E3E2F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CCA09701E9A26F200E3E2F1 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +137,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4C5F2D501EBF2761008ACD47 /* oc */ = {
+			isa = PBXGroup;
+			children = (
+				4C5F2D511EBF2761008ACD47 /* LDWaterflowLayout.h */,
+				4C5F2D521EBF2761008ACD47 /* LDWaterflowLayout.m */,
+			);
+			path = oc;
+			sourceTree = "<group>";
+		};
 		4CCA09621E9A26F200E3E2F1 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +170,7 @@
 		4CCA096D1E9A26F200E3E2F1 /* agora */ = {
 			isa = PBXGroup;
 			children = (
+				4C5F2D501EBF2761008ACD47 /* oc */,
 				4CCA09B51E9A5F4900E3E2F1 /* agora-Bridging-Header.h */,
 				4CCA096E1E9A26F200E3E2F1 /* AppDelegate.swift */,
 				4CCA09701E9A26F200E3E2F1 /* ChatViewController.swift */,
@@ -332,6 +345,7 @@
 				4CCA09A71E9A541800E3E2F1 /* MainViewController.swift in Sources */,
 				4C5F2D4F1EBEBFBA008ACD47 /* ChatCell.swift in Sources */,
 				4C5F2D4D1EBEB4D3008ACD47 /* MutilChatViewController.swift in Sources */,
+				4C5F2D531EBF2761008ACD47 /* LDWaterflowLayout.m in Sources */,
 				4CD156E81EB8C4B7000C82A6 /* ChannelCell.swift in Sources */,
 				4CCA09AF1E9A5A6F00E3E2F1 /* AgoraSetting.swift in Sources */,
 				4CCA09711E9A26F200E3E2F1 /* ChatViewController.swift in Sources */,
