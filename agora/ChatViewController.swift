@@ -13,11 +13,12 @@ class ChatViewController: UIViewController {
     
     @IBOutlet weak var localVideo: UIView!
     @IBOutlet weak var remoteView: UIView!
+    private var  localUid:UInt=UInt(arc4random())
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        agoraKit=AgoraRtcEngineKit.sharedEngine(withAppId: AgoraSetting.AgoraAppId, delegate: self)
-        agoraKit.enableVideo()
+        initAgoraEngine()
+        setupVideo()
         setupLocalVideo()
         joinChannel()
         
@@ -28,17 +29,29 @@ class ChatViewController: UIViewController {
     
     }
     
-    func setupLocalVideo(){
+    
+    func initAgoraEngine() {
+        agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: AgoraSetting.AgoraAppId, delegate: self)
+    }
+    
+
+    func setupVideo() {
+        agoraKit.enableVideo()
         agoraKit.setVideoProfile(._VideoProfile_360P, swapWidthAndHeight: false)
+    }
+    
+    
+    func setupLocalVideo(){
+    
         let videoCanvas=AgoraRtcVideoCanvas()
-        videoCanvas.uid=0
+        videoCanvas.uid=localUid
         videoCanvas.view=localVideo
         videoCanvas.renderMode = .render_Adaptive
         agoraKit.setupLocalVideo(videoCanvas)
     }
 
     func joinChannel(){
-        agoraKit.joinChannel(byKey: nil, channelName: "demo", info: nil, uid: 0){[weak self](sid,uid,elapsed)->Void in
+        agoraKit.joinChannel(byKey: nil, channelName: "demo", info: nil, uid: localUid){[weak self](sid,uid,elapsed)->Void in
             if let weakSelf = self{
                 weakSelf.agoraKit.setEnableSpeakerphone(true)
                 UIApplication.shared.isIdleTimerDisabled = true
@@ -56,12 +69,21 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func hangUp(_ sender: Any) {
-        agoraKit.leaveChannel(nil)
-        remoteView.removeFromSuperview()
-        localVideo.removeFromSuperview()
-        agoraKit=nil
+        self.leaveChannel()
         self.navigationController?.popViewController(animated: true)
         
+    }
+    func leaveChannel(){
+        if(agoraKit != nil){
+            agoraKit.leaveChannel(nil)
+            remoteView.removeFromSuperview()
+            localVideo.removeFromSuperview()
+            agoraKit=nil
+        }
+    }
+   override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        leaveChannel()
     }
 }
 
@@ -84,5 +106,8 @@ extension ChatViewController:AgoraRtcEngineDelegate{
     }
     func rtcEngine(_ engine: AgoraRtcEngineKit!, didVideoEnabled enabled: Bool, byUid uid: UInt) {
         
+    }
+    func rtcEngine(_ engine: AgoraRtcEngineKit!, didOccurError errorCode: AgoraRtcErrorCode) {
+        print("didOccurError ,%d", errorCode)
     }
 }

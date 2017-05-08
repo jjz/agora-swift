@@ -33,9 +33,7 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
         }
     
         dataArray?.append(localUid)
-        dataArray?.append(2)
-        dataArray?.append(3)
-        dataArray?.append(4)
+        
         self.collectionView.dataSource=self
         
         let layout :LDWaterflowLayout=LDWaterflowLayout()
@@ -130,14 +128,10 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
 }
 extension MutilChatViewController :AgoraRtcEngineDelegate{
      func rtcEngine(_ engine: AgoraRtcEngineKit!, firstRemoteVideoDecodedOfUid uid: UInt, size: CGSize, elapsed: Int) {
-        if(remoteView.isHidden){
-            remoteView.isHidden=false
+        if(!(dataArray?.contains(uid))!){
+            dataArray?.append(uid)
+            collectionView.reloadData()
         }
-        let videoCanvas=AgoraRtcVideoCanvas()
-        videoCanvas.uid = uid
-        videoCanvas.view = remoteView
-        videoCanvas.renderMode = .render_Fit
-        agoraKit.setupRemoteVideo(videoCanvas)
         
     }
     func rtcEngine(_ engine: AgoraRtcEngineKit!, didJoinedOfUid uid: UInt, elapsed: Int) {
@@ -146,5 +140,8 @@ extension MutilChatViewController :AgoraRtcEngineDelegate{
             collectionView.reloadData()
         }
         
+    }
+    func rtcEngine(_ engine: AgoraRtcEngineKit!, didOccurError errorCode: AgoraRtcErrorCode) {
+        print("didOccurError ,%d", errorCode)
     }
 }
