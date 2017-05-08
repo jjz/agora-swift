@@ -8,7 +8,7 @@
 
 import Foundation
 
-class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICollectionViewDataSource {
+class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICollectionViewDelegate,UICollectionViewDataSource {
     
     @IBOutlet weak var remoteView: UIView!
     
@@ -24,7 +24,7 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
         super.viewDidLoad()
         initAgoraEngine()
         setupVideo()
-        setupLocalVideo()
+    
         agoraKit.joinChannel(byKey: nil, channelName: "demo", info: nil, uid: 0) { [weak self](sid,uid,elapsed)->Void in
             if let weakSelf=self{
                 weakSelf.agoraKit.setEnableSpeakerphone(true)
@@ -35,6 +35,7 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
         dataArray?.append(localUid)
         
         self.collectionView.dataSource=self
+        self.collectionView.delegate=self
         
         let layout :LDWaterflowLayout=LDWaterflowLayout()
         layout.delegate=self
@@ -53,24 +54,41 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
     }
     
     
-    func setupLocalVideo(){
+    func setupLocalVideo(uid:UInt){
         
-//        let videoCanvas=AgoraRtcVideoCanvas()
-//        videoCanvas.uid=localUid
-//        videoCanvas.view=localVideo
-//        videoCanvas.renderMode = .render_Adaptive
-//        agoraKit.setupLocalVideo(videoCanvas)
+        if(self.remoteView.isHidden){
+            self.remoteView.isHidden=false
+        }
+        let videoCanvas=AgoraRtcVideoCanvas()
+        videoCanvas.uid=uid
+        videoCanvas.view=remoteView
+        videoCanvas.renderMode = .render_Fit
+        if(uid == localUid){
+            agoraKit.setupLocalVideo(videoCanvas)
+        }else{
+            agoraKit.setupRemoteVideo(videoCanvas)
+        }
     }
     
     
     
     @IBAction func handUp(_ sender: Any) {
-        agoraKit.leaveChannel(nil)
-        remoteView.removeFromSuperview()
-        collectionView.removeFromSuperview()
-        
-        agoraKit=nil
+        self.leaveChannel()
         self.navigationController?.popViewController(animated: true)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        leaveChannel()
+    }
+    
+    func leaveChannel(){
+        if(agoraKit != nil){
+            agoraKit.leaveChannel(nil)
+            remoteView.removeFromSuperview()
+            collectionView.removeFromSuperview()
+            
+            agoraKit=nil
+        }
     }
     @IBAction func mute(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -82,8 +100,14 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            let uid:UInt = dataArray![indexPath.row]
+            self.isSelect=true
+            setupLocalVideo(uid: uid)
+            collectionView.reloadData()
+        
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (dataArray?.count)!
     }

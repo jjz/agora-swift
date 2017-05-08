@@ -38,11 +38,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkQ-H0-Fm3">
-                                <rect key="frame" x="162" y="271" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkQ-H0-Fm3">
+                                <rect key="frame" x="158" y="271" width="60" height="60"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="ZSl-p1-6Rc"/>
+                                    <constraint firstAttribute="height" constant="60" id="iJ9-0a-G2t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <state key="normal" title="Pa">
-                                    <color key="titleShadowColor" red="0.56108940972222221" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="XNo-Wg-keb" kind="push" id="Nnq-PV-DEj"/>
@@ -50,6 +56,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pkQ-H0-Fm3" secondAttribute="bottom" constant="336" id="Fh7-hA-nUJ"/>
+                            <constraint firstItem="pkQ-H0-Fm3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="207" id="Q6X-r9-bOH"/>
+                            <constraint firstItem="pkQ-H0-Fm3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="drF-rx-maJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3aV-Cb-Zye"/>
                 </viewController>
@@ -255,8 +266,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGN-lH-4CG">
-                                <rect key="frame" x="16" y="539" width="343" height="20"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="16" y="459" width="343" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="jTJ-xb-D0s"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -266,14 +280,11 @@
                             <constraint firstItem="YI2-uh-8fv" firstAttribute="top" secondItem="60H-7c-abw" secondAttribute="bottom" constant="36" id="Bf0-xu-KHT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="60H-7c-abw" secondAttribute="trailing" id="G4W-9Z-RWH"/>
                             <constraint firstItem="60H-7c-abw" firstAttribute="leading" secondItem="1U6-lw-2n4" secondAttribute="leadingMargin" id="GVB-JX-hDH"/>
-                            <constraint firstItem="jGN-lH-4CG" firstAttribute="leading" secondItem="60H-7c-abw" secondAttribute="leading" id="Kvi-NZ-ILY"/>
                             <constraint firstItem="YI2-uh-8fv" firstAttribute="top" secondItem="jGN-lH-4CG" secondAttribute="bottom" constant="8" symbolic="YES" id="Let-ee-VCA"/>
                             <constraint firstItem="jGN-lH-4CG" firstAttribute="leading" secondItem="1U6-lw-2n4" secondAttribute="leadingMargin" id="O9c-Oy-AMp"/>
                             <constraint firstItem="60H-7c-abw" firstAttribute="top" secondItem="dhd-d0-7cp" secondAttribute="bottom" id="b7K-3v-I4A"/>
                             <constraint firstItem="tG1-Bw-IAw" firstAttribute="top" secondItem="YI2-uh-8fv" secondAttribute="bottom" id="b8U-0Q-CPy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jGN-lH-4CG" secondAttribute="trailing" id="cMN-Rs-7fP"/>
-                            <constraint firstItem="jGN-lH-4CG" firstAttribute="top" secondItem="60H-7c-abw" secondAttribute="bottom" constant="8" symbolic="YES" id="gR3-xu-N7b"/>
-                            <constraint firstItem="jGN-lH-4CG" firstAttribute="top" secondItem="60H-7c-abw" secondAttribute="bottom" constant="8" id="jdZ-lv-X58"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Aux-U5-x02"/>
