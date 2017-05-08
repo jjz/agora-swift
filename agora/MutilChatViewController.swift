@@ -18,6 +18,7 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
     
     var agoraKit :AgoraRtcEngineKit!
     private var isSelect :Bool!=false
+    private var  localUid:UInt=UInt(arc4random())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
             }
         }
     
-        dataArray?.append(1)
+        dataArray?.append(localUid)
         dataArray?.append(2)
         dataArray?.append(3)
         dataArray?.append(4)
@@ -46,7 +47,7 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
     func setupLocalVideo(){
         agoraKit.setVideoProfile(._VideoProfile_360P, swapWidthAndHeight: false)
         let videoCanvas=AgoraRtcVideoCanvas()
-        videoCanvas.uid=1
+        videoCanvas.uid=localUid
         videoCanvas.view = remoteView
         videoCanvas.renderMode = .render_Fit
         
@@ -54,10 +55,20 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
     
     
     @IBAction func handUp(_ sender: Any) {
+        agoraKit.leaveChannel(nil)
+        remoteView.removeFromSuperview()
+        collectionView.removeFromSuperview()
+        
+        agoraKit=nil
+        self.navigationController?.popViewController(animated: true)
     }
-    @IBAction func mute(_ sender: Any) {
+    @IBAction func mute(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        agoraKit.muteLocalAudioStream(sender.isSelected)
     }
     @IBAction func switchCamera(_ sender: Any) {
+        agoraKit.switchCamera()
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -73,7 +84,7 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
         cell.agora=agoraKit
         let uid:UInt = dataArray![indexPath.row]
 
-        cell.setUid(uid: uid)
+        cell.setUid(uid: uid,localUid: localUid)
         return cell
         
         

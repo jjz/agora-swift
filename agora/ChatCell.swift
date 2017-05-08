@@ -10,13 +10,17 @@ class ChatCell: UICollectionViewCell {
     private var uid :UInt!
     
     
-    func setUid(uid:UInt){
+    func setUid(uid:UInt,localUid:UInt){
         labelUser.text=String(uid)
         let videoCanvas = AgoraRtcVideoCanvas()
         videoCanvas.uid=uid
         videoCanvas.view=videoView
         videoCanvas.renderMode = .render_Fit
-        agora.setupRemoteVideo(videoCanvas)
+        if(uid != localUid){
+            agora.setupRemoteVideo(videoCanvas)
+        }else{
+            agora.setupLocalVideo(videoCanvas)
+        }
     
     }
     
