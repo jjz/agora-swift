@@ -15,10 +15,12 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
     @IBOutlet weak var collectionView: UICollectionView!
 
     public var dataArray:Array<UInt>?=Array<UInt>();
+    public var allDataArray:Array<UInt>?=Array<UInt>();
     
     var agoraKit :AgoraRtcEngineKit!
-    private var isSelect :Bool!=false
+
     private var  localUid:UInt=UInt(arc4random())
+    private var isSelect:Bool?=false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +35,14 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
         }
     
         dataArray?.append(localUid)
-        
+        allDataArray?.append(localUid)
         self.collectionView.dataSource=self
         self.collectionView.delegate=self
         
         let layout :LDWaterflowLayout=LDWaterflowLayout()
         layout.delegate=self
         self.collectionView.collectionViewLayout=layout
-    
+      //  setupLocalVideo(uid: localUid)
         
     }
     func initAgoraEngine() {
@@ -60,14 +62,12 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
             self.remoteView.isHidden=false
         }
         let videoCanvas=AgoraRtcVideoCanvas()
-        videoCanvas.uid=uid
+        videoCanvas.uid=localUid
         videoCanvas.view=remoteView
         videoCanvas.renderMode = .render_Fit
-        if(uid == localUid){
-            agoraKit.setupLocalVideo(videoCanvas)
-        }else{
-            agoraKit.setupRemoteVideo(videoCanvas)
-        }
+       
+        agoraKit.setupLocalVideo(videoCanvas)
+        
     }
     
     
@@ -102,8 +102,15 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             let uid:UInt = dataArray![indexPath.row]
             self.isSelect=true
-            setupLocalVideo(uid: uid)
+            dataArray?.removeAll()
+            for tempUid in allDataArray!{
+                if(tempUid != uid){
+                    dataArray?.append(tempUid)
+                }
+            }
             collectionView.reloadData()
+            setupLocalVideo(uid: uid)
+        
         
         
     }
@@ -125,20 +132,17 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
     }
     func waterflowLayout(_ waterflowLayout: LDWaterflowLayout!, heightForItemAt index: UInt, itemWidth: CGFloat) -> CGFloat {
         let count:Int=(dataArray?.count)!
-        if(isSelect){
-            return 50
-        }
         switch count {
         case 1:
-            return 300
+            return 300.0
         case 2:
-            return 300
+            return 300.0
         case 3:
-            return 150
+            return 150.0
         case 4:
-            return 150
+            return 150.0
         default:
-            return 100
+            return 100.0
         }
     }
     func columnCount(in waterflowLayout: LDWaterflowLayout!) -> CGFloat {
@@ -164,6 +168,9 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
 }
 extension MutilChatViewController :AgoraRtcEngineDelegate{
      func rtcEngine(_ engine: AgoraRtcEngineKit!, firstRemoteVideoDecodedOfUid uid: UInt, size: CGSize, elapsed: Int) {
+        if(!(allDataArray?.contains(uid))!){
+            allDataArray?.append(uid)
+        }
         if(!(dataArray?.contains(uid))!){
             dataArray?.append(uid)
             collectionView.reloadData()
@@ -171,6 +178,9 @@ extension MutilChatViewController :AgoraRtcEngineDelegate{
         
     }
     func rtcEngine(_ engine: AgoraRtcEngineKit!, didJoinedOfUid uid: UInt, elapsed: Int) {
+        if(!(allDataArray?.contains(uid))!){
+            allDataArray?.append(uid)
+        }
         if(!(dataArray?.contains(uid))!){
             dataArray?.append(uid)
             collectionView.reloadData()
