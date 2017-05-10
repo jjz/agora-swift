@@ -266,10 +266,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGN-lH-4CG">
-                                <rect key="frame" x="16" y="459" width="343" height="100"/>
+                                <rect key="frame" x="16" y="409" width="343" height="150"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="jTJ-xb-D0s"/>
+                                    <constraint firstAttribute="height" constant="150" id="jTJ-xb-D0s"/>
                                 </constraints>
                             </view>
                         </subviews>

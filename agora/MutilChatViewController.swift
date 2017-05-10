@@ -42,7 +42,8 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
         let layout :LDWaterflowLayout=LDWaterflowLayout()
         layout.delegate=self
         self.collectionView.collectionViewLayout=layout
-      //  setupLocalVideo(uid: localUid)
+        self.remoteView.isHidden=true
+      
         
     }
     func initAgoraEngine() {
@@ -56,18 +57,19 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
     }
     
     
-    func setupLocalVideo(uid:UInt){
-        
+    func setupVideo(uid:UInt){
         if(self.remoteView.isHidden){
             self.remoteView.isHidden=false
         }
         let videoCanvas=AgoraRtcVideoCanvas()
-        videoCanvas.uid=localUid
+        videoCanvas.uid=uid
         videoCanvas.view=remoteView
         videoCanvas.renderMode = .render_Fit
-       
-        agoraKit.setupLocalVideo(videoCanvas)
-        
+        if(uid==localUid){
+            agoraKit.setupLocalVideo(videoCanvas)
+        }else{
+            agoraKit.setupRemoteVideo(videoCanvas)
+        }
     }
     
     
@@ -109,7 +111,7 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
                 }
             }
             collectionView.reloadData()
-            setupLocalVideo(uid: uid)
+            setupVideo(uid: uid)
         
         
         
@@ -132,6 +134,9 @@ class  MutilChatViewController: UIViewController,LDWaterflowLayoutDelegate,UICol
     }
     func waterflowLayout(_ waterflowLayout: LDWaterflowLayout!, heightForItemAt index: UInt, itemWidth: CGFloat) -> CGFloat {
         let count:Int=(dataArray?.count)!
+        if(self.isSelect!){
+            return itemWidth
+        }
         switch count {
         case 1:
             return 300.0
@@ -189,5 +194,12 @@ extension MutilChatViewController :AgoraRtcEngineDelegate{
     }
     func rtcEngine(_ engine: AgoraRtcEngineKit!, didOccurError errorCode: AgoraRtcErrorCode) {
         print("didOccurError ,%d", errorCode)
+    }
+    func rtcEngine(_ engine: AgoraRtcEngineKit!, didOfflineOfUid uid: UInt, reason: AgoraRtcUserOfflineReason){
+        
+        
+    }
+    func rtcEngine(_ engine: AgoraRtcEngineKit!, didLeaveChannelWith stats: AgoraRtcStats!) {
+        
     }
 }
